@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_sale_order_extend" inherit_id="sale.portal_my_orders">
+    <xpath expr="//div[@class='oe_structure']" position="inside">
+        <!-- Add a dropdown for selecting a customer -->
+        <div class="form-group">
+            <label for="portal_customer_id">Customer</label>
+            <select name="portal_customer_id" class="form-control">
+                <t t-foreach="available_customers" t-as="customer">
+                    <option t-att-value="customer.id">
+                        <t t-esc="customer.name" />
+                    </option>
+                </t>
+            </select>
+        </div>
+    </xpath>
+</template>
+</odoo>
